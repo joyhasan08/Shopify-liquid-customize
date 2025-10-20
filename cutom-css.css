@@ -1,0 +1,123 @@
+
+/* product page text weight  */
+span.product-title-main {
+    font-weight: 500 !important;
+    color: black;
+}
+
+/* Footer Newsletter start */
+button.m-newsletter-form__button.m-button {
+  position: static !important; 
+  left: auto !important;     
+  right: auto !important;    
+}
+.m-newsletter-form__wrapper {
+    align-items: center;
+}
+
+/* button.m-newsletter-form__button.m-newsletter-form__button--text.m-button.m-button--secondary.ai-style-change-1 {
+  white-space: nowrap;
+} */
+
+/* Footer Newsletter end */
+
+/* Thanks and rewards page start */
+@media (max-width: 768px)
+{
+    .gavVG6H562 {
+    padding-left: 0px !important;
+    }
+    gp-row#gSJJ3UdMkt {
+    padding-left: 0px;
+    }
+    gp-row#gvXWcfqMl1 {
+    padding-left: 0px;
+    }
+    .gI5UTTxqN8 {
+    padding: 0px !important;
+    }
+    gp-row#gopLIPVsXh {
+    padding: 0px;
+    }
+    gp-row#gV2camAjnk {
+    padding: 0px;
+    }
+    
+   #g0l8O9eAPT p{
+    font-size:100px !important;
+   }
+   p#head {
+    font-size: 20px;
+    }
+    /* Ai can unlock Section  */
+    p.AiSectionC {
+    font-size: 16px !important;
+    padding-top:10px !important ;
+    padding-bottom:10px !important ;
+    line-height: inherit;
+    /* font-weight: 200 ; */
+    }
+    .g7PKcwIivo {
+    margin: 0px !important;
+    padding-left: 16px !important;
+    }
+    .gZc_VYF07y.gp-relative.gp-flex.gp-flex-col {
+    padding-left: 16px;
+    }
+
+    /* what we do section  */
+    .g7PKcwIivo {
+    padding-top: 0px !important;
+    }
+    .gd2R5IDEG- {
+    margin: 0px !important;
+    padding-top: 10px !important;
+    }
+    .gELRVlStUS {
+    margin: 0px !important;
+    padding-top: 10px !important;
+    }
+    .g085DN0gzq {
+    margin: 0px !important;
+    padding-top: 10px !important;
+    padding-bottom: 24px !important;
+    }
+    .gps-582489269952578161.gps.gpsil [style*="--jc:"] {
+    justify-content: center !important;
+    }
+    gp-row#g0Mtk1CIlO {
+    padding-bottom: 0px;
+}
+    /* impotent section start */
+    main#MainContent {
+    padding-bottom: 0px !important;
+    }
+    /* impotent section end */
+
+    gp-row#gJ41X3J3vZ {
+    padding-bottom: 12px;
+    }
+
+    /* help your friend section  */
+    gp-row#gcUN9HIJrp {
+    padding: 0px;
+    padding-bottom: 16px;
+    }
+    gp-row#gEfEJth6TK {
+    padding: 0;
+    }
+    gp-row#gh1Onox0wx {
+    padding: 0 16px;
+    }
+}
+
+
+/* gp-row#gV2camAjnk {
+    padding: 0px !important;
+} */
+
+
+
+/* Thanks and rewards page start */
+
+
