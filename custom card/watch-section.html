@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    /* layout replacements for Tailwind utilities */
+    .page { min-height: 100vh; }
+    .hero { padding: 2.5rem; display: flex; justify-content: center; }
+    .cards-wrap {
+      display: flex;
+      gap: 1rem;
+      padding: 2rem;
+      /* overflow-x: auto; */
+    }
+    .card {
+      width: 320px;
+      padding: 2rem;
+      background: rgba(12, 12, 12, 0.45);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      color: white;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    .rating-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .rating-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .stars {
+      display: flex;
+      gap: 4px;
+      color: white;
+    }
+    .image-container {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(6px);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 1rem 0 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image-container img {
+      width: 80%;
+      height: auto;
+    }
+    .shop-now {
+      width: fit-content;
+      padding: 8px 24px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* glass card style */
+    .glass {
+      background: rgba(12, 12, 12, 0.45);
+      -webkit-backdrop-filter: blur(10px) saturate(120%);
+      backdrop-filter: blur(10px) saturate(120%);
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+
+    /* inner image panel */
+    .image-panel {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
+      border-radius: 1rem;
+      padding: 2rem;
+      /* width: 100%; */
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* small white pill button */
+    .pill {
+      background: #ffffff;
+      color: #000000;
+      padding: 0.5rem 1.5rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    /* shadow inner replacement for Tailwind's shadow-inner */
+    .shadow-inner { box-shadow: inset 0 4px 12px rgba(0,0,0,0.25); }
+
+    /* responsive tweaks */
+    @media (max-width: 1024px) {
+      .cards-wrap {
+        padding: 1.5rem;
+        gap: 0.75rem;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        min-width: 100%;
+        padding: 1.25rem;
+      }
+      .image-panel {
+        padding: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cards-wrap {
+        padding: 1rem;
+        flex-direction: column;
+      }
+      .card {
+        min-width: 100%;
+      }
+      .image-panel {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body class="page" style="background-image:url('./asset/bg2.jpg'); background-size:cover; background-position:center;">
+  <section class="hero">
+    <section class="cards-wrap">
+      <!-- card start  -->
+      <div class="card">
+        <h1>Basic</h1>
+        
+        <div class="rating-container">
+          <div class="rating-row">
+            <span>Elastisch</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Trocknungszeit</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Sportempfehlung</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="./asset/tranparent.png" alt="Blue watch">
+        </div>
+
+        <button class="shop-now">SHOP NOW</button>
+      </div>
+      <!-- card end  -->
+
+        <!-- card start  -->
+      <div class="card">
+        <h1>Basic</h1>
+        
+        <div class="rating-container">
+          <div class="rating-row">
+            <span>Elastisch</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Trocknungszeit</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Sportempfehlung</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="./asset/tranparent.png" alt="Blue watch">
+        </div>
+
+        <button class="shop-now">SHOP NOW</button>
+      </div>
+      <!-- card end  -->
+
+        <!-- card start  -->
+      <div class="card">
+        <h1>Basic</h1>
+        
+        <div class="rating-container">
+          <div class="rating-row">
+            <span>Elastisch</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Trocknungszeit</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Sportempfehlung</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="./asset/tranparent.png" alt="Blue watch">
+        </div>
+
+        <button class="shop-now">SHOP NOW</button>
+      </div>
+      <!-- card end  -->
+
+        <!-- card start  -->
+      <div class="card">
+        <h1>Basic</h1>
+        
+        <div class="rating-container">
+          <div class="rating-row">
+            <span>Elastisch</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Trocknungszeit</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Sportempfehlung</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="./asset/tranparent.png" alt="Blue watch">
+        </div>
+
+        <button class="shop-now">SHOP NOW</button>
+      </div>
+      <!-- card end  -->
+
+        <!-- card start  -->
+      <div class="card">
+        <h1>Basic</h1>
+        
+        <div class="rating-container">
+          <div class="rating-row">
+            <span>Elastisch</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Trocknungszeit</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Sportempfehlung</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="./asset/tranparent.png" alt="Blue watch">
+        </div>
+
+        <button class="shop-now">SHOP NOW</button>
+      </div>
+      <!-- card end  -->
+
+      
+
+    </section>
+  </section>
+</body>
+</html>

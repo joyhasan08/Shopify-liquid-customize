@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    /* layout replacements for Tailwind utilities */
+    .page { min-height: 100vh; }
+    .hero { padding: 2.5rem; display: flex; justify-content: center; }
+    .cards-wrap {
+      display: flex;
+      gap: 1rem;
+      padding: 2rem;
+      overflow-x: auto;
+    }
+    .card {
+      width: 320px;
+      padding: 2rem;
+      background: rgba(12, 12, 12, 0.45);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      color: white;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    .rating-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .rating-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .stars {
+      display: flex;
+      gap: 4px;
+      color: white;
+    }
+    .image-container {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(6px);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 1rem 0 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image-container img {
+      width: 80%;
+      height: auto;
+    }
+    .shop-now {
+      width: fit-content;
+      padding: 8px 24px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* glass card style */
+    .glass {
+      background: rgba(12, 12, 12, 0.45);
+      -webkit-backdrop-filter: blur(10px) saturate(120%);
+      backdrop-filter: blur(10px) saturate(120%);
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+
+    /* inner image panel */
+    .image-panel {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
+      border-radius: 1rem;
+      padding: 2rem;
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* small white pill button */
+    .pill {
+      background: #ffffff;
+      color: #000000;
+      padding: 0.5rem 1.5rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    /* shadow inner replacement for Tailwind's shadow-inner */
+    .shadow-inner { box-shadow: inset 0 4px 12px rgba(0,0,0,0.25); }
+
+    /* responsive tweaks */
+    @media (max-width: 1024px) {
+      .cards-wrap {
+        padding: 1.5rem;
+        gap: 0.75rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        min-width: 260px;
+        padding: 1.25rem;
+      }
+      .image-panel {
+        padding: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cards-wrap {
+        padding: 1rem;
+      }
+      .card {
+        min-width: 240px;
+      }
+      .image-panel {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body class="page" style="background-image:url('./asset/bg2.jpg'); background-size:cover; background-position:center;">
+  <section class="hero">
+    <section class="cards-wrap">
+      <!-- card start  -->
+      <div class="card">
+        <h1>Basic</h1>
+        
+        <div class="rating-container">
+          <div class="rating-row">
+            <span>Elastisch</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Trocknungszeit</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Sportempfehlung</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="./asset/tranparent.png" alt="Blue watch">
+        </div>
+
+        <button class="shop-now">SHOP NOW</button>
+      </div>
+      <!-- card end  -->
+
+        <!-- card start  -->
+      <div class="card">
+        <h1>Basic</h1>
+        
+        <div class="rating-container">
+          <div class="rating-row">
+            <span>Elastisch</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Trocknungszeit</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Sportempfehlung</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="./asset/tranparent.png" alt="Blue watch">
+        </div>
+
+        <button class="shop-now">SHOP NOW</button>
+      </div>
+      <!-- card end  -->
+
+        <!-- card start  -->
+      <div class="card">
+        <h1>Basic</h1>
+        
+        <div class="rating-container">
+          <div class="rating-row">
+            <span>Elastisch</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Trocknungszeit</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Sportempfehlung</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="./asset/tranparent.png" alt="Blue watch">
+        </div>
+
+        <button class="shop-now">SHOP NOW</button>
+      </div>
+      <!-- card end  -->
+
+        <!-- card start  -->
+      <div class="card">
+        <h1>Basic</h1>
+        
+        <div class="rating-container">
+          <div class="rating-row">
+            <span>Elastisch</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Trocknungszeit</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Sportempfehlung</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="./asset/tranparent.png" alt="Blue watch">
+        </div>
+
+        <button class="shop-now">SHOP NOW</button>
+      </div>
+      <!-- card end  -->
+
+        <!-- card start  -->
+      <div class="card">
+        <h1>Basic</h1>
+        
+        <div class="rating-container">
+          <div class="rating-row">
+            <span>Elastisch</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Trocknungszeit</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <div class="rating-row">
+            <span>Sportempfehlung</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="./asset/tranparent.png" alt="Blue watch">
+        </div>
+
+        <button class="shop-now">SHOP NOW</button>
+      </div>
+      <!-- card end  -->
+
+      
+
+    </section>
+  </section>
+</body>
+</html>
+
+
+
+
+versin 2 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .card {
+            border-radius: 1.5rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .rating-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .rating-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .star {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        .image-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(6px);
+            border-radius: 1rem;
+            padding: 0.75rem;
+            margin-bottom: 1.5rem;
+            aspect-ratio: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .shop-btn {
+            display: block;
+            margin: 0 auto;
+            padding: 0.5rem 1.5rem;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .shop-btn:hover {
+            background: #f3f4f6;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 100%;
+            margin: 0 auto;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .cards-container {
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+            .card {
+                flex: 0 1 calc(50% - 0.75rem);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .cards-container {
+                gap: 2rem;
+                padding: 2rem;
+            }
+            .card {
+                flex: 0 1 calc(20% - 1.6rem);
+                min-width: 240px;
+            }
+        }
+
+        @media (max-width: 639px) {
+            .card {
+                flex: 0 1 100%;
+                max-width: 320px;
+            }
+        }
+
+        main {
+            min-height: 100vh;
+            background-image: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background-size: cover;
+            background-position: center;
+            padding: 2.5rem 1rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="cards-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <h2 class="card-title">Basic</h2>
+                <div style="margin-bottom: 2rem;">
+                    <div class="rating-item">
+                        <span>Elastisch</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Trocknungszeit</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Sportempfehlung</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="Product Watch">
+                </div>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <h2 class="card-title">Basic</h2>
+                <div style="margin-bottom: 2rem;">
+                    <div class="rating-item">
+                        <span>Elastisch</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Trocknungszeit</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Sportempfehlung</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="Product Watch">
+                </div>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <h2 class="card-title">Basic</h2>
+                <div style="margin-bottom: 2rem;">
+                    <div class="rating-item">
+                        <span>Elastisch</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Trocknungszeit</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Sportempfehlung</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="Product Watch">
+                </div>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <h2 class="card-title">Basic</h2>
+                <div style="margin-bottom: 2rem;">
+                    <div class="rating-item">
+                        <span>Elastisch</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Trocknungszeit</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Sportempfehlung</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="Product Watch">
+                </div>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <h2 class="card-title">Basic</h2>
+                <div style="margin-bottom: 2rem;">
+                    <div class="rating-item">
+                        <span>Elastisch</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Trocknungszeit</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Sportempfehlung</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="Product Watch">
+                </div>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+versin 03 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        main {
+            min-height: 70vh;
+            background-image: url('./asset/bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 2.5rem 1rem;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 100%;
+            margin: 0 auto;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .card {
+            flex: 0 1 320px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1.5rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+        }
+
+        .card-title {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .rating-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .star {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        .image-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(6px);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            aspect-ratio: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+        }
+
+        .shop-btn {
+            display: block;
+            margin: 0 auto;
+            padding: 0.5rem 1.5rem;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .shop-btn:hover {
+            background: #f3f4f6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .cards-container {
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+            .card {
+                flex: 0 1 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                gap: 1rem;
+                padding: 1rem;
+            }
+            .card {
+                flex: 0 1 280px;
+                padding: 1.5rem;
+            }
+            .image-container {
+                padding: 1.5rem;
+            }
+            .card-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 1rem;
+            }
+            .card {
+                flex: 0 1 100%;
+                max-width: 320px;
+            }
+            .image-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="cards-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <h2 class="card-title">Basic</h2>
+                <div style="margin-bottom: 2rem;">
+                    <div class="rating-item">
+                        <span>Elastisch</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Trocknungszeit</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Sportempfehlung</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="Product Watch">
+                </div>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <h2 class="card-title">Basic</h2>
+                <div style="margin-bottom: 2rem;">
+                    <div class="rating-item">
+                        <span>Elastisch</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Trocknungszeit</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Sportempfehlung</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="Product Watch">
+                </div>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <h2 class="card-title">Basic</h2>
+                <div style="margin-bottom: 2rem;">
+                    <div class="rating-item">
+                        <span>Elastisch</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Trocknungszeit</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Sportempfehlung</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="Product Watch">
+                </div>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <h2 class="card-title">Basic</h2>
+                <div style="margin-bottom: 2rem;">
+                    <div class="rating-item">
+                        <span>Elastisch</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Trocknungszeit</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Sportempfehlung</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="Product Watch">
+                </div>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <h2 class="card-title">Basic</h2>
+                <div style="margin-bottom: 2rem;">
+                    <div class="rating-item">
+                        <span>Elastisch</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Trocknungszeit</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Sportempfehlung</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="Product Watch">
+                </div>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

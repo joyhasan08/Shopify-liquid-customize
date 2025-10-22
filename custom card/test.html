@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  
+</head>
+
+
+<style>
+    /* layout replacements for Tailwind utilities */
+    .page { min-height: 100vh; }
+    .hero { padding: 2.5rem; display: flex; justify-content: center; }
+    .cards-wrap { display: flex; align-items: flex-start; gap: 2rem; justify-content: center; flex-wrap: nowrap; }
+    .card { color: #ffffff; padding: 1.5rem; width: 20rem; display: flex; flex-direction: column; gap: 1.5rem; border-top: 1px solid rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.03); border-radius: 1rem; box-sizing: border-box; }
+    .card h1 { font-size: 1.5rem; font-weight: 600; margin: 0; }
+    .muted { color: rgba(255,255,255,0.9); }
+    .text-sm { font-size: 0.875rem; }
+    .row-between { display: flex; align-items: center; justify-content: space-between; }
+    .stars { display: flex; align-items: center; gap: 0.25rem; }
+    .stars img { width: 1rem; height: auto; }
+    .product-img { width: 10rem; height: auto; }
+    .center-col { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    /* glass card style */
+    .glass {
+      background: rgba(12, 12, 12, 0.45);
+      -webkit-backdrop-filter: blur(10px) saturate(120%);
+      backdrop-filter: blur(10px) saturate(120%);
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+
+    /* inner image panel */
+    .image-panel {
+      background: rgba(255,255,255,0.04);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      border-radius: 18px;
+      padding: 0px;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* small white pill button */
+    .pill {
+      background: #ffffff;
+      color: #111827;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      border: none;
+      cursor: pointer;
+    }
+
+    /* star tint */
+    .star-img { filter: brightness(200%) contrast(90%); }
+
+    /* shadow inner replacement for Tailwind's shadow-inner */
+    .shadow-inner { box-shadow: inset 0 4px 12px rgba(0,0,0,0.25); }
+
+    /* responsive tweaks */
+    @media (max-width: 880px) {
+      .cards-wrap { flex-wrap: wrap; gap: 1.125rem; }
+      .card { width: 100% !important; max-width: 26.25rem; }
+    }
+  </style>
+
+
+
+
+
+<body>
+    <div class="page" style="background-image:url('./asset/bg2.jpg'); background-size:cover; background-position:center;">
+  <section class="hero">
+    <section class="cards-wrap">
+      <!-- card -->
+      <div class="card glass">
+        <div class="row-between">
+          <h1>Basic</h1>
+        </div>
+
+        <div class="muted text-sm" style="display:block; row-gap: 1rem;">
+          <!-- row -->
+          <div class="row-between">
+            <p class="text-sm">Elastisch</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Trocknungszeit</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Sportempfehlung</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Atmungsaktivität</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="center-col">
+          <div class="image-panel rounded-xl shadow-inner">
+            <img class="product-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="product">
+          </div>
+          <button class="pill">SHOP NOW</button>
+        </div>
+      </div>
+      <!-- card end -->
+
+        <!-- card -->
+      <div class="card glass">
+        <div class="row-between">
+          <h1>Basic</h1>
+        </div>
+
+        <div class="muted text-sm" style="display:block; row-gap: 1rem;">
+          <!-- row -->
+          <div class="row-between">
+            <p class="text-sm">Elastisch</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Trocknungszeit</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Sportempfehlung</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Atmungsaktivität</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="center-col">
+          <div class="image-panel rounded-xl shadow-inner">
+            <img class="product-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="product">
+          </div>
+          <button class="pill">SHOP NOW</button>
+        </div>
+      </div>
+      <!-- card end -->
+
+
+        <!-- card -->
+      <div class="card glass">
+        <div class="row-between">
+          <h1>Basic</h1>
+        </div>
+
+        <div class="muted text-sm" style="display:block; row-gap: 1rem;">
+          <!-- row -->
+          <div class="row-between">
+            <p class="text-sm">Elastisch</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Trocknungszeit</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Sportempfehlung</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Atmungsaktivität</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="center-col">
+          <div class="image-panel rounded-xl shadow-inner">
+            <img class="product-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="product">
+          </div>
+          <button class="pill">SHOP NOW</button>
+        </div>
+      </div>
+      <!-- card end -->
+
+         <!-- card -->
+      <div class="card glass">
+        <div class="row-between">
+          <h1>Basic</h1>
+        </div>
+
+        <div class="muted text-sm" style="display:block; row-gap: 1rem;">
+          <!-- row -->
+          <div class="row-between">
+            <p class="text-sm">Elastisch</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Trocknungszeit</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Sportempfehlung</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+
+          <div class="row-between">
+            <p class="text-sm">Atmungsaktivität</p>
+            <div class="stars">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+              <img class="star-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/star.png?v=1761007825" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="center-col">
+          <div class="image-panel rounded-xl shadow-inner">
+            <img class="product-img" src="https://cdn.shopify.com/s/files/1/0939/6653/2875/files/tranparent.png?v=1761007829" alt="product">
+          </div>
+          <button class="pill">SHOP NOW</button>
+        </div>
+      </div>
+      <!-- card end -->
+
+
+      
+
+      
+     
+
+      <!-- add more cards as needed, reuse the card structure above -->
+    </section>
+  </section>
+</div>
+</body>
+</html>
