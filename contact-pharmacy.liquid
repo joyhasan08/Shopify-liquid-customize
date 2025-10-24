@@ -1,0 +1,198 @@
+{% schema %}
+{
+  "name": "Pharmacy Contact Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "location",
+      "name": "Location",
+      "settings": [
+        {
+          "type": "text",
+          "id": "location_name",
+          "label": "Location Name",
+          "default": "ZEN Knightsbridge Pharmacy & Clinic"
+        },
+        {
+          "type": "text",
+          "id": "location_url",
+          "label": "Location Link",
+          "default": "#"
+        },
+        {
+          "type": "text",
+          "id": "address",
+          "label": "Address",
+          "default": "53 Beauchamp Place, London, SW3 1NY"
+        },
+        {
+          "type": "text",
+          "id": "phone_1",
+          "label": "Phone 1",
+          "default": "020 7225 1660"
+        },
+        {
+          "type": "text",
+          "id": "phone_2",
+          "label": "Phone 2",
+          "default": "020 7225 1663"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email",
+          "default": "knightsbridge@zenhealthcare.co.uk"
+        },
+        {
+          "type": "text",
+          "id": "hours_weekday",
+          "label": "Weekday Hours",
+          "default": "Monday – Saturday: 9:00am – 11:00pm"
+        },
+        {
+          "type": "text",
+          "id": "hours_sunday",
+          "label": "Sunday Hours",
+          "default": "Sunday: 12:00pm – 9:00pm"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pharmacy Contact Section",
+      "category": "Contact"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.container {
+  display: grid;
+  gap: 32px;
+  /* max-width: 1280px; */
+  max-width: 85%;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-name {
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: #111827;
+  margin: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.text-detail {
+  color: #6b7280;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.zen-link {
+  color: #1e40af;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.zen-link:hover {
+  text-decoration: underline;
+}
+
+.contact-line, .address-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.phone-section {
+  min-height: 120px;
+  padding-top: 24px;
+}
+
+.hours-section {
+  margin-top: 24px;
+}
+
+@media (min-width: 640px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1240px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+{% endstylesheet %}
+
+
+
+<section class="container">
+  {% for block in section.blocks %}
+  <div class="card">
+    <a class="location-name" href="{{ block.settings.location_url }}">
+      {{ block.settings.location_name }}
+    </a>
+
+    <!-- Address -->
+    <p class="address-line text-detail">
+      <img src="{{ 'maps-and-flag.png' | asset_url }}" alt="" class="icon" aria-hidden="true" width="20" height="20">
+      {{ block.settings.address }}
+    </p>
+
+    <!-- Contact -->
+    <div class="phone-section">
+      <h4>Contact</h4>
+      {% if block.settings.phone_1 != blank %}
+      <p class="contact-line text-detail">
+        <img src="{{ 'phone.png' | asset_url }}" alt="" class="icon" aria-hidden="true" width="20" height="20">
+        <a href="tel:{{ block.settings.phone_1 | remove: ' ' }}" class="zen-link">{{ block.settings.phone_1 }}</a>
+      </p>
+      {% endif %}
+      {% if block.settings.phone_2 != blank %}
+      <p class="contact-line text-detail">
+        <img src="{{ 'phone.png' | asset_url }}" alt="" class="icon" aria-hidden="true" width="20" height="20">
+        <a href="tel:{{ block.settings.phone_2 | remove: ' ' }}" class="zen-link">{{ block.settings.phone_2 }}</a>
+      </p>
+      {% endif %}
+      {% if block.settings.email != blank %}
+      <p class="contact-line text-detail" style="margin-top:8px;">
+        <img src="{{ 'emailj.png' | asset_url }}" alt="" class="icon" aria-hidden="true" width="20" height="20">
+        <a href="mailto:{{ block.settings.email }}" class="zen-link">{{ block.settings.email }}</a>
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- Opening Hours -->
+    <div class="hours-section">
+      <h4>
+        <img src="{{ 'timee.png' | asset_url }}" alt="" class="icon" aria-hidden="true" width="20" height="20">
+        Opening hours
+      </h4>
+      <p class="text-detail">{{ block.settings.hours_weekday }}</p>
+      <p class="text-detail">{{ block.settings.hours_sunday }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</section>

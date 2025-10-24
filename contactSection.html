@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure CSS Pharmacy Contact Section</title>
+    <style>
+        /* BASE STYLES & FONT */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 1rem; /* Padding for mobile */
+        }
+
+        /* CONTAINER SETUP: Using CSS Grid for responsive columns */
+        .container {
+            display: grid;
+            gap: 32px; /* Spacing between cards */
+            max-width: 1400px; /* Max width constraint */
+            margin: 0 auto; /* Center the container */
+            padding: 16px;
+        }
+
+        /* CARD STYLES */
+        .card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* LOCATION NAME STYLES */
+        .location-name {
+            font-weight: 600; /* Semi-bold */
+            font-size: 1rem;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            color: #111827; /* Dark text */
+            margin: 0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* DETAIL TEXT STYLES (Light Gray) */
+        .text-detail {
+            color: #6b7280; /* Gray-500 */
+            font-size: 0.875rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        /* ICON STYLING (Blue for links, Gray for location/time) */
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        .icon-gray {
+            color: #6b7280;
+        }
+        .icon-blue {
+            color: #1e40af;
+        }
+
+        /* CONTACT AND HOURS SUBHEADINGS */
+        h4 {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* LINK STYLES (Blue) */
+        .zen-link {
+            color: #1e40af;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .zen-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ALIGNMENT FIX FOR CONTACT LINES */
+        .contact-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .address-line {
+            display: flex;
+            align-items: flex-start;
+            height: 48px;
+        }
+        
+        /* Ensures the two phone lines align vertically */
+        .phone-section {
+            min-height: 120px;
+        }
+        .hours-section {
+            margin-top: 8px;
+        }
+
+        /* HAMPSTEAD ALIGNMENT FIX (Empty space for second phone line) */
+        .hampstead-spacer {
+            height: 24px;
+        }
+
+
+        /* ------------------ MEDIA QUERIES FOR RESPONSIVENESS ------------------ */
+
+        /* Tablet Layout (min-width: 640px) -> 2 Columns */
+        @media (min-width: 640px) {
+            body {
+                padding: 2rem; /* Increase padding for tablet */
+            }
+            .container {
+                /* Two equal-width columns */
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Desktop Layout (min-width: 1024px) -> 4 Columns */
+        @media (min-width: 1024px) {
+            .container {
+                /* Four equal-width columns */
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Card 1: ZEN Knightsbridge Pharmacy & Clinic -->
+        <div class="card">
+            <a class="location-name" href="">ZEN Knightsbridge Pharmacy & Clinic</a>
+            
+
+            <!-- Address -->
+            <p class="address-line text-detail">
+                <img src="contactAsst/maps-and-flags.png" alt="Location" class="icon" aria-hidden="true">
+                <span>53 Beauchamp Place, London, SW3 1NY</span>
+            </p>
+
+            <!-- Contact Section -->
+            <div class="phone-section">
+                <h4>Contact</h4>
+                <p class="contact-line text-detail">
+                    <img src="contactAsst/call.png" alt="Phone" class="icon" aria-hidden="true">
+                    <a href="tel:02072251660" class="zen-link">020 7225 1660</a>
+                </p>
+                <p class="contact-line text-detail">
+                    <img src="contactAsst/call.png" alt="Phone" class="icon" aria-hidden="true">
+                    <a href="tel:02072251663" class="zen-link">020 7225 1663</a>
+                </p>
+                <p class="contact-line text-detail" style="margin-top: 8px;">
+                    <img src="contactAsst/email.png" alt="Email" class="icon" aria-hidden="true">
+                    <a href="mailto:knightsbridge@zenhealthcare.co.uk" class="zen-link">knightsbridge@zenhealthcare.co.uk</a>
+                </p>
+            </div>
+
+            <!-- Opening Hours Section -->
+            <div class="hours-section">
+                <h4>
+                    <img src="contactAsst/time.png" alt="Time" class="icon" aria-hidden="true">
+                    Opening hours
+                </h4>
+                <p class="text-detail">Monday – Saturday: 9:00am – 11:00pm</p>
+                <p class="text-detail">Sunday: 12:00pm – 9:00pm</p>
+            </div>
+        </div>
+
+        <!-- Card 2: ZEN Baker Street Pharmacy & Clinic -->
+        <div class="card">
+            <a class="location-name" href="">ZEN Baker Street Pharmacy & Clinic</a>
+            
+
+            <!-- Address -->
+            <p class="address-line text-detail">
+                <img src="contactAsst/maps-and-flags.png" alt="Location" class="icon" aria-hidden="true">
+                <span>3a Baker Street, London, W1U 8ED</span>
+            </p>
+
+            <!-- Contact Section -->
+            <div class="phone-section">
+                <h4>Contact</h4>
+                <p class="contact-line text-detail">
+                    <img src="contactAsst/call.png" alt="Phone" class="icon" aria-hidden="true">
+                    <a href="tel:02036090080" class="zen-link">020 3609 0080</a>
+                </p>
+                <p class="contact-line text-detail">
+                    <img src="contactAsst/call.png" alt="Phone" class="icon" aria-hidden="true">
+                    <a href="tel:02036090081" class="zen-link">020 3609 0081</a>
+                </p>
+                <p class="contact-line text-detail" style="margin-top: 8px;">
+                    <img src="contactAsst/email.png" alt="Email" class="icon" aria-hidden="true">
+                    <a href="mailto:bakerstreet@zenhealthcare.co.uk" class="zen-link">bakerstreet@zenhealthcare.co.uk</a>
+                </p>
+            </div>
+
+            <!-- Opening Hours Section -->
+            <div class="hours-section">
+                <h4>
+                    <img src="contactAsst/time.png" alt="Time" class="icon" aria-hidden="true">
+                    Opening hours
+                </h4>
+                <p class="text-detail">Monday – Saturday: 9:00am – 11:00pm</p>
+                <p class="text-detail">Sunday: 12:00pm – 9:00pm</p>
+            </div>
+        </div>
+
+        <!-- Card 3: ZEN Holborn Pharmacy & Clinic -->
+        <div class="card">
+            <a class="location-name" href="">ZEN Holborn Pharmacy & Clinic</a>
+            
+
+            <!-- Address -->
+            <p class="address-line text-detail">
+                <img src="contactAsst/maps-and-flags.png" alt="Location" class="icon" aria-hidden="true">
+                <span>50 Southampton Row, Holborn, London, WC1B 5AN</span>
+            </p>
+
+            <!-- Contact Section -->
+            <div class="phone-section">
+                <h4>Contact</h4>
+                <p class="contact-line text-detail">
+                    <img src="contactAsst/call.png" alt="Phone" class="icon" aria-hidden="true">
+                    <a href="tel:02078377743" class="zen-link">0207 837 7743</a>
+                </p>
+                <p class="contact-line text-detail">
+                    <img src="contactAsst/call.png" alt="Phone" class="icon" aria-hidden="true">
+                    <a href="tel:08456804438" class="zen-link">0845 680 4438</a>
+                </p>
+                <p class="contact-line text-detail" style="margin-top: 8px;">
+                    <img src="contactAsst/email.png" alt="Email" class="icon" aria-hidden="true">
+                    <a href="mailto:holborn@zenhealthcare.co.uk" class="zen-link">holborn@zenhealthcare.co.uk</a>
+                </p>
+            </div>
+
+            <!-- Opening Hours Section -->
+            <div class="hours-section">
+                <h4>
+                    <img src="contactAsst/time.png" alt="Time" class="icon" aria-hidden="true">
+                    Opening hours
+                </h4>
+                <p class="text-detail">Monday – Saturday: 9:00am – 7:00pm</p>
+                <p class="text-detail">Sunday: 12:00pm – 7:00pm</p>
+            </div>
+        </div>
+
+        <!-- Card 4: ZEN Hampstead Pharmacy & Clinic -->
+        <div class="card">
+            <a class="location-name" href="" >ZEN Hampstead Pharmacy & Clinic</a>
+
+            <!-- Address -->
+            <p class="address-line text-detail">
+                <img src="contactAsst/maps-and-flags.png" alt="Location" class="icon" aria-hidden="true">
+                <span>57-61 Heath Street, Hampstead, London, NW3 6UG</span>
+            </p>
+
+            <!-- Contact Section -->
+            <div class="phone-section">
+                <h4>Contact</h4>
+                <p class="contact-line text-detail">
+                    <img src="contactAsst/call.png" alt="Phone" class="icon" aria-hidden="true">
+                    <a href="tel:02080791314" class="zen-link">0208 079 1314</a>
+                </p>
+                <!-- This spacer maintains vertical alignment with the other cards that have two phone numbers -->
+                <div class="hampstead-spacer"></div>
+                <p class="contact-line text-detail" style="margin-top: 8px;">
+                    <img src="contactAsst/email.png" alt="Email" class="icon" aria-hidden="true">
+                    <a href="mailto:hampstead@zenhealthcare.co.uk" class="zen-link">hampstead@zenhealthcare.co.uk</a>
+                </p>
+            </div>
+
+            <!-- Opening Hours Section -->
+            <div class="hours-section">
+                <h4>
+                    <img src="contactAsst/time.png" alt="Time" class="icon" aria-hidden="true">
+                    Opening hours
+                </h4>
+                <p class="text-detail">Monday – Saturday: 9:00am – 6:00pm</p>
+                <p class="text-detail">Sunday: 10:00am – 6:00pm</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
