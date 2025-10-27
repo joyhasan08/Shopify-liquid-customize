@@ -1,0 +1,291 @@
+<section id="watch-card-{{ section.id }}" class="watch-card-section" aria-label="Product card">
+  <style>
+    .watch-card-section {
+      padding: 40px 20px;
+      background: {% if section.settings.bg_image != blank %}url({{ section.settings.bg_image | img_url: '2048x' }}) center/cover no-repeat{% else %}linear-gradient(180deg,#2a1a17 0%, #1b0f0d 100%){% endif %};
+      color: #fff;
+      display: flex;
+      justify-content: center;
+    }
+
+    .watch-card {
+      width: 320px;
+      border-radius: 18px;
+      padding: 20px;
+      background: rgba(9,9,10,0.45);
+      -webkit-backdrop-filter: blur(10px) saturate(120%);
+      backdrop-filter: blur(10px) saturate(120%);
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+
+    .watch-card .title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .watch-card .features { font-size: 14px; color: rgba(255,255,255,0.9); margin-bottom: 18px; }
+    .watch-card .feature-row { display:flex; justify-content:space-between; align-items:center; margin:8px 0; }
+    .watch-card .feature-label { color: rgba(255,255,255,0.9); }
+    .watch-card .stars { display:flex; gap:6px; align-items:center; }
+
+    .watch-card .stars svg { width:12px; height:12px; display:block; }
+    .watch-card .stars .filled { fill: #ffffff; opacity:0.95; }
+    .watch-card .stars .empty  { fill: rgba(255,255,255,0.12); }
+
+    .watch-card .image-panel {
+      background: rgba(255,255,255,0.03);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      border-radius: 14px;
+      padding: 18px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:14px;
+      min-height:140px;
+    }
+
+    .watch-card .product-img { max-width:160px; max-height:160px; object-fit:contain; }
+
+    .watch-card .cta {
+      display:flex;
+      justify-content:center;
+      margin-top:12px;
+    }
+
+    .watch-card .btn {
+      background:#ffffff;
+      color:#111827;
+      padding:8px 18px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
+    }
+
+    @media (max-width:420px){
+      .watch-card { width:92%; padding:16px; }
+      .watch-card .title { font-size:20px; }
+    }
+  </style>
+
+  <div class="watch-card">
+    {% if section.settings.title != blank %}
+      <div class="title">{{ section.settings.title }}</div>
+    {% endif %}
+
+    <div class="features" role="list">
+      {% for block in section.blocks %}
+        <div class="feature-row" role="listitem">
+          <div class="feature-label">{{ block.settings.label }}</div>
+          <div class="stars" aria-hidden="true">
+            {% assign count = block.settings.stars | plus: 0 %}
+            {% for i in (1..5) %}
+              {% if i <= count %}
+                <svg class="filled" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.6l2.3 4.66 5.14.75-3.72 3.63.88 5.13L10 13.9 4.47 16.77l.88-5.13L1.63 7.99l5.14-.75L10 1.6z"/></svg>
+              {% else %}
+                <svg class="empty" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.6l2.3 4.66 5.14.75-3.72 3.63.88 5.13L10 13.9 4.47 16.77l.88-5.13L1.63 7.99l5.14-.75L10 1.6z"/></svg>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="image-panel">
+      {% if section.settings.product_image != blank %}
+        <img src="{{ section.settings.product_image | img_url: '600x' }}" alt="{{ section.settings.product_image_alt | escape }}" class="product-img" />
+      {% else %}
+        <img src="{{ 'placeholder-no-image.png' | asset_url }}" alt="product" class="product-img" />
+      {% endif %}
+    </div>
+
+    <div class="cta">
+      {% if section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="btn" {% if section.settings.open_in_new_window %}target="_blank" rel="noopener"{% endif %}>{{ section.settings.button_text }}</a>
+      {% else %}
+        <span class="btn">{{ section.settings.button_text }}</span>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Watch card (glass)",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Card title", "default": "Basic" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image (optional)" },
+    { "type": "image_picker", "id": "product_image", "label": "Product image" },
+    { "type": "text", "id": "product_image_alt", "label": "Product image alt", "default": "Product image" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "text", "id": "button_text", "label": "Button text", "default": "SHOP NOW" },
+    { "type": "checkbox", "id": "open_in_new_window", "label": "Open link in new window", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature row",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Feature label", "default": "Elastisch" },
+        { "type": "range", "id": "stars", "label": "Stars", "min": 0, "max": 5, "step": 1, "default": 3 }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "Watch card (glass)", "category": "Product" }]
+}
+{% endschema %}
+```// filepath: c:\Users\Zarjij Hasan (Joy)\Desktop\Shopify liquid\sections\watch-card.liquid
+<section id="watch-card-{{ section.id }}" class="watch-card-section" aria-label="Product card">
+  <style>
+    .watch-card-section {
+      padding: 40px 20px;
+      background: {% if section.settings.bg_image != blank %}url({{ section.settings.bg_image | img_url: '2048x' }}) center/cover no-repeat{% else %}linear-gradient(180deg,#2a1a17 0%, #1b0f0d 100%){% endif %};
+      color: #fff;
+      display: flex;
+      justify-content: center;
+    }
+
+    .watch-card {
+      width: 320px;
+      border-radius: 18px;
+      padding: 20px;
+      background: rgba(9,9,10,0.45);
+      -webkit-backdrop-filter: blur(10px) saturate(120%);
+      backdrop-filter: blur(10px) saturate(120%);
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+
+    .watch-card .title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .watch-card .features { font-size: 14px; color: rgba(255,255,255,0.9); margin-bottom: 18px; }
+    .watch-card .feature-row { display:flex; justify-content:space-between; align-items:center; margin:8px 0; }
+    .watch-card .feature-label { color: rgba(255,255,255,0.9); }
+    .watch-card .stars { display:flex; gap:6px; align-items:center; }
+
+    .watch-card .stars svg { width:12px; height:12px; display:block; }
+    .watch-card .stars .filled { fill: #ffffff; opacity:0.95; }
+    .watch-card .stars .empty  { fill: rgba(255,255,255,0.12); }
+
+    .watch-card .image-panel {
+      background: rgba(255,255,255,0.03);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      border-radius: 14px;
+      padding: 18px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:14px;
+      min-height:140px;
+    }
+
+    .watch-card .product-img { max-width:160px; max-height:160px; object-fit:contain; }
+
+    .watch-card .cta {
+      display:flex;
+      justify-content:center;
+      margin-top:12px;
+    }
+
+    .watch-card .btn {
+      background:#ffffff;
+      color:#111827;
+      padding:8px 18px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
+    }
+
+    @media (max-width:420px){
+      .watch-card { width:92%; padding:16px; }
+      .watch-card .title { font-size:20px; }
+    }
+  </style>
+
+  <div class="watch-card">
+    {% if section.settings.title != blank %}
+      <div class="title">{{ section.settings.title }}</div>
+    {% endif %}
+
+    <div class="features" role="list">
+      {% for block in section.blocks %}
+        <div class="feature-row" role="listitem">
+          <div class="feature-label">{{ block.settings.label }}</div>
+          <div class="stars" aria-hidden="true">
+            {% assign count = block.settings.stars | plus: 0 %}
+            {% for i in (1..5) %}
+              {% if i <= count %}
+                <svg class="filled" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.6l2.3 4.66 5.14.75-3.72 3.63.88 5.13L10 13.9 4.47 16.77l.88-5.13L1.63 7.99l5.14-.75L10 1.6z"/></svg>
+              {% else %}
+                <svg class="empty" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.6l2.3 4.66 5.14.75-3.72 3.63.88 5.13L10 13.9 4.47 16.77l.88-5.13L1.63 7.99l5.14-.75L10 1.6z"/></svg>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="image-panel">
+      {% if section.settings.product_image != blank %}
+        <img src="{{ section.settings.product_image | img_url: '600x' }}" alt="{{ section.settings.product_image_alt | escape }}" class="product-img" />
+      {% else %}
+        <img src="{{ 'placeholder-no-image.png' | asset_url }}" alt="product" class="product-img" />
+      {% endif %}
+    </div>
+
+    <div class="cta">
+      {% if section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="btn" {% if section.settings.open_in_new_window %}target="_blank" rel="noopener"{% endif %}>{{ section.settings.button_text }}</a>
+      {% else %}
+        <span class="btn">{{ section.settings.button_text }}</span>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Watch card (glass)",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Card title", "default": "Basic" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image (optional)" },
+    { "type": "image_picker", "id": "product_image", "label": "Product image" },
+    { "type": "text", "id": "product_image_alt", "label": "Product image alt", "default": "Product image" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "text", "id": "button_text", "label": "Button text", "default": "SHOP NOW" },
+    { "type": "checkbox", "id": "open_in_new_window", "label": "Open link in new window", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature row",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Feature label", "default": "Elastisch" },
+        { "type": "range", "id": "stars", "label": "Stars", "min": 0, "max": 5, "step": 1, "default": 3 }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "Watch card (glass)", "category": "Product" }]
+}
+{% endschema %}
